@@ -1,0 +1,129 @@
+<div class="container" style="padding:20px;">
+  <div class="row">
+    <div class="col-sm-4 col-md-4 col-lg-4 col-xl-4 ">
+      <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 boxStyle">
+        <p class="surveyStyle">Surveys</p>
+
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 divSurveyStyle">
+          <p>Create Survey <span class="glyphicon glyphicon-chevron-right" style="float:right;"></span></p>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 divSurveyStyle">
+          <p>All Surveys <span class="glyphicon glyphicon-chevron-right" style="float:right;"></span></p>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 divSurveyStyle">
+          <p>Delted Surveys <span class="glyphicon glyphicon-chevron-right" style="float:right;"></span></p>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 divSurveyStyle">
+          <p>Drafts <span class="glyphicon glyphicon-chevron-right" style="float:right;"></span></p>
+        </div>
+
+      </div>
+      <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 userStyle">
+        <p class="management">User Management</p>
+      </div>
+    </div>
+    <div class="col-sm-8 col-md-8 col-lg-8 col-xl-8 ">
+      <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <div class="tabs-holder" ng-app="simpleTab" ng-init="tab=1">
+          <ul class="tabs-nav" style="margin-left:0px;border-bottom:1px solid lightgray;">
+            <li><a ng-click="tab=1" ng-class="{'active' : tab==1}">Manage Admins</a></li>
+            <li><a ng-click="tab=2" ng-class="{'active' : tab==2}">Add / Edit Admin</a></li>
+          </ul>
+
+          <div class="tabs-container boxStyle">
+            <div class="tab-content" ng-show="tab == 1" style="border:none;">
+              <div class="table-responsive">
+                <p class="manageAdmin">Manage Admins</p>
+                <table class="table table-condensed">
+                  <thead>
+                    <th class="removeBold">Employee Name</th>
+                    <th class="removeBold">Employee Code</th>
+                    <th class="removeBold">Mail Id</th>
+                    <th class="removeBold">Designation</th>
+                    <th class="removeBold">Edit/Delete</th>
+                  </thead>
+                  <tbody ng-repeat="i in employees">
+                    <tr>
+                      <td class="addBold">{{i.Name}}</td>
+                      <td class="addBold">{{i.Code}}</td>
+                      <td class="addBold">{{i.Mail}}</td>
+                      <td class="addBold">{{i.Designation}}</td>
+                      <td>
+                        <span class="glyphicon glyphicon-pencil editIcon" style="padding-right:10px;cursor:pointer;"
+                          id="editIcon" ng-click="openTab($event)"></span>
+                        <span class="glyphicon glyphicon-trash editIcon"></span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="tab-content" ng-show="tab == 2" style="border:none;">
+              <p class="manageAdmin">Add / Edit Admin</p>
+              <div class="responsive">
+                <table>
+                  <tbody>
+                    <tr>
+                      <td><input type="text" placeholder="Employee Name" class="editAdmin"> </td>
+                      <td><input type="text" class="editAdmin" placeholder="Employee Code"> </td>
+                    </tr>
+                    <tr>
+                      <td><input type="text" class="editAdmin" placeholder="Employee Email"> </td>
+                      <td><input type="text" class="editAdmin" placeholder="Employee Designation"> </td>
+                    </tr>
+
+                  </tbody>
+                </table>
+                <button type="submit" class="btn btn-info loginbutton">Add Admin</button><br>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 tab-content permissionStyle" ng-show="tab == 2">
+        <p class="manageAdmin">Permission</p>
+        <div class="responsive">
+          <table>
+            <tbody>
+              <tr>
+                <td style="padding-right:10px;">
+                  <p class="displayblock">Create survey</p>
+                  <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                  </label>
+                </td>
+                <td style="padding-right:10px;">
+                  <p class="displayblock">All surveys</p>
+                  <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                  </label>
+                </td>
+                <td style="padding-right:10px;">
+                  <p class="displayblock">Deleted surveys</p>
+                  <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                  </label>
+                </td>
+                <td style="padding-right:10px;">
+                  <p class="displayblock">User Management</p>
+                  <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                  </label>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <button type="submit" class="btn btn-info loginbutton">Save</button><br>
+
+        </div>
+
+
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,23 @@
+<div class="container loginContainer">
+    <div class="loginDiv">
+        <p style="text-align:center;font-weight:bold;">Login</p>
+        <div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+            <form ng-submit="formSubmit()" class="form">
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xl-12">
+                    <div class="form-group">
+                        <input type="text" class="form-control" ng-model="username" placeholder="Enter Username"
+                            required="" style="height:33px;" />
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" ng-model="password" placeholder="Enter Password"
+                            required="" style="height:33px;" />
+                    </div>
+                    <div class="form-group" style="text-align:center;">
+                        <button type="submit" class="btn btn-info loginbutton">Login</button><br>
+                        <span class="text-danger" style="color:red">{{ error }}</span>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

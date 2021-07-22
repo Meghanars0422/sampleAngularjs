@@ -1,0 +1,14 @@
+[
+    {
+        "Name": "John",
+        "Code": "ER230K",
+        "Mail": "John@gmail.com",
+        "Designation": "Manager"
+    },
+    {
+        "Name": "Rich",
+        "Code": "JSDG24",
+        "Mail": "Rich@gmail.com",
+        "Designation": "hr"
+    }
+]
